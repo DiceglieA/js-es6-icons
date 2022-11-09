@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    color: lightseagreen;
+    padding: 1rem 1rem 0.2rem;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: lightseagreen;
+    padding: 1rem;
+}
+
+#type {
+   margin: 0 0.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    background-color: lightgrey;
+    height: 100vh;
+    max-width: 100wv;
+}
+
+.card {
+    width: calc(100% / 5);
+    background-color: white;
+}
+
+
