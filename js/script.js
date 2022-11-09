@@ -1,7 +1,7 @@
 // Milestone 1
-// Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
+// Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa. v 
 // Milestone 2
-// Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+// Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente. v
 // Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 // BONUS
@@ -139,14 +139,17 @@ for (let i = 0; i < arrCard.length; i++) {
     //     <i class="${card.family} ${card.prefix + card.name}"></i>
     //     <div>${card.name}</div>
     // </div>`
-    const item = document.createElement('div')
-    item.classList.add('card')
-    const icon = document.createElement('i')
-    const description = document.createElement('div')
-    icon.classList.add(card.family)
-    icon.classList.add(card.prefix + card.name)
-    item.append(icon)
-    item.append(description)
-    eleContainer.append(item)
+
+     const item = document.createElement('div')
+     item.classList.add('card')
+     const icon = document.createElement('i')
+     const description = document.createElement('div')
+     icon.classList.add(card.family)
+     icon.classList.add(card.prefix + card.name)
+     description.innerHTML += `${card.name}`
+     icon.style.color = card.color
+     item.append(icon)
+     item.append(description)
+     eleContainer.append(item)
     
 }
