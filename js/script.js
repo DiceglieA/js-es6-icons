@@ -15,7 +15,7 @@
 // Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all'interno l'icona e uno span con il nome. Solamente quando la parte logica è completa, ci dedichiamo al css.
 
 
-const card = [
+const arrCard = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -129,3 +129,24 @@ const card = [
 		color: 'blue'
 	}
 ];
+
+const eleContainer = document.querySelector('.container')
+const eleCard = document.querySelector('.card')
+
+for (let i = 0; i < arrCard.length; i++) {
+    const card = arrCard[i];
+    // eleContainer.innerHTML += `<div class="card">
+    //     <i class="${card.family} ${card.prefix + card.name}"></i>
+    //     <div>${card.name}</div>
+    // </div>`
+    const item = document.createElement('div')
+    item.classList.add('card')
+    const icon = document.createElement('i')
+    const description = document.createElement('div')
+    icon.classList.add(card.family)
+    icon.classList.add(card.prefix + card.name)
+    item.append(icon)
+    item.append(description)
+    eleContainer.append(item)
+    
+}
