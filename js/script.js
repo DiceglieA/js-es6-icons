@@ -7,13 +7,6 @@
 // BONUS
 // 1- modificare la struttura dati fornita e valorizzare la proprietà "color" in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F.
 // 2- popolare le options della select della milestone 3 dinamicamente.
-// Consigli del giorno
-// Come sempre, iniziamo prima di tutto dall'analisi e comprensione della consegna. Scomponiamo il problema in micro-passaggi logici che solamente in un secondo momento trasformeremo in codice.
-// Le icone presenti nella struttura dati fanno riferimento alla nota libreria Font Awesome, perciò come prima cosa assicuriamoci di aver inserito il link alla cdn nell'head della pagina.
-// Dopodiché, basandoci sul codice di riferimento nel sito di Font Awesome, analizziamo come è formato il tag <i> di un'icona qualsiasi, in particolare focalizziamoci sulle classi.
-// Come possiamo usare i dati presenti nella nostra struttura dati per creare l'elemento html nel modo corretto e visualizzare l'icona in pagina?
-// Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all'interno l'icona e uno span con il nome. Solamente quando la parte logica è completa, ci dedichiamo al css.
-
 
 const arrCard = [
 	{
@@ -132,7 +125,11 @@ const arrCard = [
 
 const eleContainer = document.querySelector('.container')
 const eleCard = document.querySelector('.card')
+let typeValue = document.getElementById('type').value
 
+allCards()
+
+ function allCards () {
 for (let i = 0; i < arrCard.length; i++) {
     const card = arrCard[i];
     // eleContainer.innerHTML += `<div class="card">
@@ -152,4 +149,25 @@ for (let i = 0; i < arrCard.length; i++) {
      item.append(description)
      eleContainer.append(item)
     
+}
+ }
+
+//  function filterCard() {
+// 	if (typeValue == 'user') {
+// 		allCards()
+// 	} else if (typeValue == 'user'){}
+// }
+function filterIcons() {
+	const selectedType = this.value; // qui avrebbe funzionato anche eleSelect essendo in scope, ma ci sono casi in cui la variabile non e' in scope, il this funziona sempre
+
+	// filtrare array
+if (selectedType !== '') {
+	arrIconsFiltered = arrCard.filter(objIcon => objIcon.type === selectedType)
+} else {
+	arrIconsFiltered = arrCard;
+}
+console.log(arrIconsFiltered);
+
+// renderizzare array delle icone filtrate
+renderIcons(arrIconsFiltered, eleIconsContainer);
 }
