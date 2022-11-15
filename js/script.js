@@ -152,15 +152,11 @@ for (let i = 0; i < arrCard.length; i++) {
 }
  }
 
-//  function filterCard() {
-// 	if (typeValue == 'user') {
-// 		allCards()
-// 	} else if (typeValue == 'user'){}
-// }
-function filterIcons() {
-	const selectedType = this.value; // qui avrebbe funzionato anche eleSelect essendo in scope, ma ci sono casi in cui la variabile non e' in scope, il this funziona sempre
 
-	// filtrare array
+function filterIcons() {
+	const selectedType = this.value; 
+
+	
 if (selectedType !== '') {
 	arrIconsFiltered = arrCard.filter(objIcon => objIcon.type === selectedType)
 } else {
@@ -168,6 +164,6 @@ if (selectedType !== '') {
 }
 console.log(arrIconsFiltered);
 
-// renderizzare array delle icone filtrate
+
 renderIcons(arrIconsFiltered, eleIconsContainer);
 }
